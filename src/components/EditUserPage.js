@@ -25,17 +25,36 @@ class EditUserPage extends React.Component {
 
   render() {
     return (
-      <div>
-        <button onClick={() => this.props.history.push("/")}>Back</button>
-        <button
-          onClick={() => {
-            this.props.dispatch(removeUser({ id: this.props.user.id }));
-            this.props.history.push("/");
-          }}
-        >
-          Remove
-        </button>
-        <UserForm onSubmit={this.submit} initialValues={this.props.user} />
+      <div className="container">
+        <div className="card card-outline-secondary">
+          <div className="card-header">
+            <div className="row">
+              <div className="col-sm-6">
+                <h3 className="mb-0">User Information</h3>
+              </div>
+              <div className="col-sm-6">
+                <button
+                  className="btn btn-secondary btn-lg float-right ml-1"
+                  onClick={() => this.props.history.push("/")}
+                >
+                  Back
+                </button>
+                <button
+                  className="btn btn-danger btn-lg float-right"
+                  onClick={() => {
+                    this.props.dispatch(removeUser({ id: this.props.user.id }));
+                    this.props.history.push("/");
+                  }}
+                >
+                  Remove
+                </button>
+              </div>
+            </div>
+          </div>
+          <div className="card-body">
+            <UserForm onSubmit={this.submit} initialValues={this.props.user} />
+          </div>
+        </div>
       </div>
     );
   }

@@ -1,12 +1,16 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
 import UsersList from "./UsersList";
 
 const IndexPage = () => (
-  <div>
-    <Link to="/createUser">New</Link>
-    <UsersList />
+  <div className="container">
+    <div className="row">
+      <div className="col-md-12">
+        <h1 className="display-4 text-center">Users</h1>
+        <p className="lead text-center">info</p>
+        <UsersList />
+      </div>
+    </div>
   </div>
 );
 

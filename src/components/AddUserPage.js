@@ -24,9 +24,27 @@ class AddUserPage extends React.Component {
 
   render() {
     return (
-      <div>
-        <button onClick={() => this.props.history.push("/")}>Back</button>
-        <UserForm onSubmit={this.submit} />
+      <div className="container">
+        <div className="card card-outline-secondary">
+          <div className="card-header">
+            <div className="row">
+              <div className="col-lg-6">
+                <h3 className="mb-0">User Information</h3>
+              </div>
+              <div className="col-lg-6">
+                <button
+                  className="btn btn-secondary btn-lg float-right"
+                  onClick={() => this.props.history.push("/")}
+                >
+                  Back
+                </button>
+              </div>
+            </div>
+          </div>
+          <div className="card-body">
+            <UserForm onSubmit={this.submit} />
+          </div>
+        </div>
       </div>
     );
   }

@@ -9,12 +9,14 @@ import NotFoundPage from "../components/NotFoundPage";
 const App = () => (
   <Router>
     <div>
-      <Switch>
-        <Route path="/" component={IndexPage} exact={true} />
-        <Route path="/createUser" component={AddUserPage} />
-        <Route path="/edit/:id" component={EditUserPage} />
-        <Route component={NotFoundPage} />
-      </Switch>
+      <div className="container-fluid">
+        <Switch>
+          <Route path="/" component={IndexPage} exact={true} />
+          <Route path="/createUser" component={AddUserPage} />
+          <Route path="/edit/:id" component={EditUserPage} />
+          <Route component={NotFoundPage} />
+        </Switch>
+      </div>
     </div>
   </Router>
 );
