@@ -1,8 +1,9 @@
 import React from "react";
 import { Field, reduxForm } from "redux-form";
 
-let UserForm = props => {
-  const { handleSubmit } = props;
+export let UserForm = props => {
+  const { handleSubmit, submitting, invalid } = props;
+
   return (
     <form onSubmit={handleSubmit}>
       <div>
@@ -246,6 +247,7 @@ let UserForm = props => {
         <div className="col-lg-9">
           <button
             className="btn btn-secondary btn-lg float-right"
+            disabled={submitting || invalid}
             type="submit"
           >
             Submit

@@ -5,7 +5,7 @@ import { editUser, removeUser } from "../actions/users";
 
 import UserForm from "./UserForm";
 
-class EditUserPage extends React.Component {
+export class EditUserPage extends React.Component {
   submit = values => {
     const user = { ...values };
 
@@ -35,12 +35,14 @@ class EditUserPage extends React.Component {
               <div className="col-sm-6">
                 <button
                   className="btn btn-secondary btn-lg float-right ml-1"
+                  name="back"
                   onClick={() => this.props.history.push("/")}
                 >
                   Back
                 </button>
                 <button
                   className="btn btn-danger btn-lg float-right"
+                  name="remove"
                   onClick={() => {
                     this.props.dispatch(removeUser({ id: this.props.user.id }));
                     this.props.history.push("/");

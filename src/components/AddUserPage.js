@@ -5,7 +5,7 @@ import { addUser } from "../actions/users";
 
 import UserForm from "./UserForm";
 
-class AddUserPage extends React.Component {
+export class AddUserPage extends React.Component {
   submit = values => {
     const user = { ...values };
 
@@ -17,7 +17,7 @@ class AddUserPage extends React.Component {
         return response.json();
       })
       .then(data => {
-        this.props.dispatch(addUser({ ...data, ...user }));
+        this.props.addUser({ ...data, ...user });
         this.props.history.push("/");
       });
   };
@@ -50,4 +50,10 @@ class AddUserPage extends React.Component {
   }
 }
 
-export default connect()(AddUserPage);
+const mapDispatchToProps = dispatch => {
+  return {
+    handleSubmit: user => dispatch(addUser(user))
+  };
+};
+
+export default connect(undefined, mapDispatchToProps)(AddUserPage);
