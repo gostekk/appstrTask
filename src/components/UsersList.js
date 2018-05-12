@@ -4,7 +4,7 @@ import { withRouter } from "react-router-dom";
 
 import UsersListItem from "./UsersListItem";
 
-const UsersList = props => {
+export const UsersList = props => {
   return (
     <div>
       <table className="table">
@@ -22,9 +22,18 @@ const UsersList = props => {
               </button>
             </th>
           </tr>
-          {props.users.map(user => {
-            return <UsersListItem key={user.id} {...user} />;
-          })}
+          {props.users.length ? (
+            props.users.map(user => {
+              return <UsersListItem key={user.id} {...user} />;
+            })
+          ) : (
+            <tr>
+              <td>No</td>
+              <td>data</td>
+              <td>added</td>
+              <td>yet!</td>
+            </tr>
+          )}
         </thead>
       </table>
     </div>
