@@ -1,4 +1,5 @@
 import { addUser, editUser, removeUser } from "../../actions/users";
+import { newUser } from "../fixtures/users";
 
 test("should setup remove user action object", () => {
   const action = removeUser({ id: "123" });
@@ -22,17 +23,19 @@ test("should setup edit user action object", () => {
 });
 
 test("should setup add user action object with provided value", () => {
-  const user = {
-    id: "12",
-    name: "user",
-    username: "username",
-    email: "test@email.com"
-  };
-
-  const action = addUser(user);
+  const action = addUser(newUser);
 
   expect(action).toEqual({
     type: "ADD_USER",
-    user
+    user: newUser
+  });
+});
+
+test("should setup add user action object with provided value", () => {
+  const action = addUser(newUser);
+
+  expect(action).toEqual({
+    type: "ADD_USER",
+    user: newUser
   });
 });
