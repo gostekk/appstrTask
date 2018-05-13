@@ -4,7 +4,8 @@ import { fullState, users } from '../fixtures/users';
 import { mapStateToProps, mapDispatchToProps } from '../../containers/EditUser';
 
 test("should call mapStateToProps with state", () => {
-  const { user } = mapStateToProps(fullState, {match: {params: {id: users[1]._id.toString()}}});
+  const state = {users: fullState};
+  const { user } = mapStateToProps(state, {match: {params: {id: users[1]._id.toString()}}});
 
   expect(user).toEqual(users[1]);
 });

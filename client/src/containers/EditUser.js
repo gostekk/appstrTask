@@ -4,7 +4,7 @@ import EditUser from '../components/EditUser';
 
 export const mapStateToProps = (state,ownProps) => {
   return {
-    user: state.users.find(user => user._id.toString() === ownProps.match.params.id)
+    user: state.users.users.find(user => user._id.toString() === ownProps.match.params.id)
   }
 }
 
