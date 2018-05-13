@@ -1,10 +1,10 @@
 import { connect } from 'react-redux';
-import * as usersActions from '../actions/users';
+import { addNewUser } from '../actions/users';
 import AddUser from '../components/AddUser';
 
-const mapDispatchToProps = (dispatch) => {
+export const mapDispatchToProps = (dispatch) => {
   return {
-    addNewUser: (user) => dispatch(usersActions.addNewUser(user)),
+    addNewUser: (user) => dispatch(addNewUser(user)),
   }
 }
 

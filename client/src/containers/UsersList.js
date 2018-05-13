@@ -2,13 +2,13 @@ import { connect } from 'react-redux';
 import * as usersActions from '../actions/users';
 import UsersList from '../components/UsersList';
 
-const mapStateToProps = (state,ownProps) => {
+export const mapStateToProps = (state,ownProps) => {
   return {
     users: state.users.users
   }
 }
 
-const mapDispatchToProps = (dispatch) => {
+export const mapDispatchToProps = (dispatch) => {
   return {
     fetchUsers: () => dispatch(usersActions.fetchUsers()),
   }

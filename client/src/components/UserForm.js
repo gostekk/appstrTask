@@ -2,7 +2,7 @@ import React from "react";
 import { Field, reduxForm } from "redux-form";
 import classnames from 'classnames';
 
-const renderField = ({ input, label, type, name, className, meta: {touched, error}}) => (
+export const renderField = ({ input, label, type, name, className, meta: {touched, error}}) => (
   <div className="form-group col-md-12 col-lg-6">
     <label
       className="col-md-12 col-form-label form-control-label"

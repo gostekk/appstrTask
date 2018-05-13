@@ -1,6 +1,6 @@
 // Users Reducer
 
-const usersDefaultState = {
+export const usersDefaultState = {
   users: [],
   isFetching: false,
   error: null
@@ -39,7 +39,7 @@ const usersReducer = (state = usersDefaultState, action) => {
     case "ADD_NEW_USER_SUCCESS":
       return {
         ...state,
-        users: [...state, action.user],
+        users: [...state.users, action.user],
         isFetching: false,
         error: null
       };

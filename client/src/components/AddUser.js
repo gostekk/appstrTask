@@ -3,7 +3,7 @@ import { SubmissionError } from "redux-form";
 
 import UserForm from "./UserForm";
 
-export class AddUser extends React.Component {
+class AddUser extends React.Component {
   submit = values => {
     const user = { ...values };
 

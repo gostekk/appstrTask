@@ -100,15 +100,14 @@ export const editUserFailed = (error) => ({
 });
 
 // REMOVE_USER
-export const removeUser = ({ _id } = {}) => {
+export const removeUser = ({ _id }) => {
   return dispatch => {
     dispatch(removeUserRequest());
     return axios
       .delete(`/api/user/${_id}`)
-      .then(response => {
-        console.log(response.data)
-        // dispatch(removeUserSuccess(response.data._id))
-  })
+      .then(response =>
+        dispatch(removeUserSuccess(response.data._id))
+      )
       .catch(error => {
         dispatch(removeUserFailed(error.response.data));
         throw error.response.data;
